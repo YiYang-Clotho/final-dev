@@ -1,1 +1,273 @@
-<h1>HOME</h1>
+<h1>Clock+</h1>
+<h4>Build by Yi Yang <%= session[:status]%> - s3798354@student.rmit.edu.au - attenpt grade level - Friday 6:30pm Group 5</h4>
+
+<div>
+    <div class="left_box">
+        <table>
+            <tr>
+                <td> 
+                    <span style="color: #32f199;">
+                        <i class="fa fa-circle"></i> 
+                    </span>
+                    Business time
+                </td>
+            </tr>
+        
+            <tr>
+                <td> 
+                    <span style="color: #eef132;">
+                        <i class="fa fa-circle"></i> 
+                    </span>
+                    Business overtime
+                </td>
+            <tr>
+
+            <tr>
+                <td>
+                    <span style="color: Tomato;">
+                        <i class="fa fa-circle"></i> 
+                    </span>
+                    Personal time
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <span style="color: grey;">
+                        <i class="fa fa-moon-o"></i> 
+                    </span>
+                    Sleeping time
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <div class="mid_box">
+        <table>
+            <tr class="zone_box" id="zone_box1"> 
+                <td class="zone_left">
+                    <h2 style="padding-left: 10px;" ><%= Time.zone = 'Melbourne' %><h2>
+                </td>
+                <td id = "time" class="zone_right">
+                    <% if session[:status] == "12" %>
+                        <h2 style="float: right; margin-right: 22px; position: reletive; clear:both">
+                            <%= Time.zone.now.strftime("%I:%M:%S %p") %>
+                        </h2>
+                    <% else %>
+                        <h2 style="float: right; margin-right: 22px; position: reletive; clear:both">
+                            <%= Time.zone.now.strftime("%H:%M:%S") %>
+                        </h2>
+                    <% end%>
+                        
+                    
+                    <h4 style="float: right; margin-right: 10px; position: reletive; clear:both">Today
+                    
+                    <% if Time.zone.now.strftime("%H:%M") > Time.parse("9:00") && Time.zone.now.strftime("%H:%M") <= Time.parse("17:59")%>
+                            <span style="color: #32f199;">
+                                <i class="fa fa-circle"></i> 
+                            </span>
+                        <% elsif Time.zone.now.strftime("%H:%M") >= Time.parse("18:00") && Time.zone.now.strftime("%H:%M") <= Time.parse("19:59") %>
+                            <span style="color: #eef132;">
+                                <i class="fa fa-circle"></i> 
+                            </span>
+
+                        <% elsif Time.zone.now.strftime("%H:%M") >= Time.parse("8:00") && Time.zone.now.strftime("%H:%M") <= Time.parse("8:59") || Time.zone.now.strftime("%H:%M") >= Time.parse("20:00") && Time.zone.now.strftime("%H:%M") <= Time.parse("22:59")%>
+                            <span style="color: Tomato;">
+                                <i class="fa fa-circle"></i> 
+                            </span>
+
+                        <% else Time.zone.now.strftime("%H:%M") >= Time.parse("23:00") && Time.zone.now.strftime("%H:%M") <= Time.parse("23:59") || Time.zone.now.strftime("%H:%M") >= Time.parse("00:00") && Time.zone.now.strftime("%H:%M") <= Time.parse("7:59") %>
+                            <span style="color: cadetblue;">
+                                <i class="fa fa-moon-o"></i> 
+                            </span>
+                        <%end%>
+                    </h4>
+                    
+                    
+                    
+                </td>
+            </tr>
+
+            <tr class="zone_box" id="zone_box2"> 
+                <td class="zone_left">
+                    <h2 style="padding-left: 10px; padding-bottom:0" ><%= Time.zone = 'Tokyo' %><h2>
+                    <h5>-1h</h5>
+                </td>
+                <td class="zone_right">
+                    <% if session[:status] == "12" %>
+                        <h2 style="float: right; margin-right: 22px; position: reletive; clear:both">
+                            <%= Time.zone.now.strftime("%I:%M:%S %p") %>
+                        </h2>
+                    <% else %>
+                        <h2 style="float: right; margin-right: 22px; position: reletive; clear:both">
+                            <%= Time.zone.now.strftime("%H:%M:%S") %>
+                        </h2>
+                    <% end%>
+                    
+                    </h2>
+                    <h4 style="float: right; margin-right: 10px; position: reletive; clear:both">
+                        <% if Time.zone.now.day == @default_zone.day %>
+                            Today
+                        <% elsif Time.zone.now.day > @default_zone.day %>
+                            Tomorrow
+                        <% else %>
+                            Yesterday
+                        <%end%>
+
+                        <% if Time.zone.now.strftime("%H:%M") > Time.parse("9:00") && Time.zone.now.strftime("%H:%M") <= Time.parse("17:59")%>
+                            <span style="color: #32f199;">
+                                <i class="fa fa-circle"></i> 
+                            </span>
+                        <% elsif Time.zone.now.strftime("%H:%M") >= Time.parse("18:00") && Time.zone.now.strftime("%H:%M") <= Time.parse("19:59") %>
+                            <span style="color: #eef132;">
+                                <i class="fa fa-circle"></i> 
+                            </span>
+
+                        <% elsif Time.zone.now.strftime("%H:%M") >= Time.parse("8:00") && Time.zone.now.strftime("%H:%M") <= Time.parse("8:59") || Time.zone.now.strftime("%H:%M") >= Time.parse("20:00") && Time.zone.now.strftime("%H:%M") <= Time.parse("22:59")%>
+                            <span style="color: Tomato;">
+                                <i class="fa fa-circle"></i> 
+                            </span>
+
+                        <% else Time.zone.now.strftime("%H:%M") >= Time.parse("23:00") && Time.zone.now.strftime("%H:%M") <= Time.parse("23:59") || Time.zone.now.strftime("%H:%M") >= Time.parse("00:00") && Time.zone.now.strftime("%H:%M") <= Time.parse("7:59") %>
+                            <span style="color: cadetblue;">
+                                <i class="fa fa-moon-o"></i> 
+                            </span>
+                        <%end%>
+                    </h4>
+                        
+                </td>
+            </tr>
+
+            <tr class="zone_box" id="zone_box3"> 
+                <td class="zone_left">
+                    <h2 style="padding-left: 10px; padding-bottom:0" ><%= Time.zone = 'London' %><h2>
+                    <h5>-9h</h5>
+                </td>
+                <td class="zone_right">
+                    <% if session[:status] == "12" %>
+                        <h2 style="float: right; margin-right: 22px; position: reletive; clear:both">
+                            <%= Time.zone.now.strftime("%I:%M:%S %p") %>
+                        </h2>
+                    <% else %>
+                        <h2 style="float: right; margin-right: 22px; position: reletive; clear:both">
+                            <%= Time.zone.now.strftime("%H:%M:%S") %>
+                        </h2>
+                    <% end%>
+                    
+                    <h4 style="float: right; margin-right: 10px; position: reletive; clear:both">
+                        <% if Time.zone.now.day == @default_zone.day %>
+                            Today
+                        <% elsif Time.zone.now.day > @default_zone.day %>
+                            Tomorrow
+                        <% else %>
+                            Yesterday
+                        <%end%>
+
+                        <% if Time.zone.now.strftime("%H:%M") > Time.parse("9:00") && Time.zone.now.strftime("%H:%M") <= Time.parse("17:59")%>
+                            <span style="color: #32f199;">
+                                <i class="fa fa-circle"></i> 
+                            </span>
+                        <% elsif Time.zone.now.strftime("%H:%M") >= Time.parse("18:00") && Time.zone.now.strftime("%H:%M") <= Time.parse("19:59") %>
+                            <span style="color: #eef132;">
+                                <i class="fa fa-circle"></i> 
+                            </span>
+
+                        <% elsif Time.zone.now.strftime("%H:%M") >= Time.parse("8:00") && Time.zone.now.strftime("%H:%M") <= Time.parse("8:59") || Time.zone.now.strftime("%H:%M") >= Time.parse("20:00") && Time.zone.now.strftime("%H:%M") <= Time.parse("22:59")%>
+                            <span style="color: Tomato;">
+                                <i class="fa fa-circle"></i> 
+                            </span>
+
+                        <% else Time.zone.now.strftime("%H:%M") >= Time.parse("23:00") && Time.zone.now.strftime("%H:%M") <= Time.parse("23:59") || Time.zone.now.strftime("%H:%M") >= Time.parse("00:00") && Time.zone.now.strftime("%H:%M") <= Time.parse("7:59") %>
+                            <span style="color: cadetblue;">
+                                <i class="fa fa-moon-o"></i> 
+                            </span>
+                        <%end%>
+                    </h4>
+                </td>
+            </tr>
+
+        </table>
+
+    
+    </div>
+
+    <div class="right_box">
+        <table>
+            <tr>
+                <td> 
+                    Colour Theme
+                    <input style="color:#000" type="button" value="click to change mode" id="btn">
+
+                    <script>
+                        var btn = document.getElementById("btn");
+                        var body = document.body;
+                        let array = ["#222", "#555", "white"];
+                        let index = 0;
+
+                        var zone_box1 = document.getElementById("zone_box1");
+                        var zone_box2 = document.getElementById("zone_box2");
+                        var zone_box3 = document.getElementById("zone_box3");
+
+                        let array_mid = ["#333", "#888", "#999"];
+                        let array_font = ["white", "white", "black"];
+                        let array_hover = ["#444", "#666", "#888"];
+
+                        btn.onclick = function () {
+                            body.style.backgroundColor = array[index];
+                            zone_box1.style.backgroundColor = array_mid[index];
+                            zone_box2.style.backgroundColor = array_mid[index];
+                            zone_box3.style.backgroundColor = array_mid[index];
+
+                            body.style.color = array_font[index];
+                            zone_box1.style.color = array_font[index];
+
+                            index = (index + 1) % array.length;
+                        }
+                    </script>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input class="change" id = "myCheck" type="checkbox">
+                    <%= "12-Hours Clock" %>
+
+                    <script>
+                        console.log(<%= session[:status]%>);
+                        
+                        <% if session[:status] == "24" %>
+                            $(".change").prop("checked", false);
+                            console.log("this is executed");
+                        <% else %>
+                            $(".change").prop("checked", true);
+                            console.log("should be 12 actually "+<%= session[:status]%>);
+                        <% end %>
+
+                        $(".change").click(function(){
+                            <% if session[:status] == "24"%>
+                                status = "12";
+                            <% else %>
+                                status = "24";
+                            <% end %>
+                            console.log(<%= session[:status]%>);
+
+                            $.ajax({
+                                type: "post",
+                                url: '/set_status',
+                                data: {
+                                    status: status
+                                },
+                                success: function(result){
+                                    console.log("current value after post is for session is "+  <%=  @session %>);
+                                    window.location.reload();
+                                }
+                            })
+                        })
+
+                    </script>
+
+                </td>
+            <tr>
+        </table>
+    </div>
+
+</div>

@@ -5,3 +5,8 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+zone = JSON.parse(File.read('zone.json'))
+zone.each do |zone|
+    Zone.create!(offset: zone['offset'],
+        utc: zone['utc'])
+end

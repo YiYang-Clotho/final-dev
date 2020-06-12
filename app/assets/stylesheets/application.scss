@@ -1,0 +1,337 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ *= require font-awesome
+ */
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+ 
+ @import "font-awesome.css";
+
+ /* universal */
+
+body {
+    padding-top: 60px;
+    color: #ffffff;
+    background-color: #222;
+  }
+
+section {
+overflow: auto;
+}
+
+textarea {
+resize: vertical;
+}
+
+.btn {
+    font-size: 11px;
+    background-color: cadetblue;
+    border: none;
+    color:white;
+}
+
+.btn-primary{
+    background-color: cadetblue;
+    color: #ffffff;
+  }
+
+.btn:hover {
+    color: #ffffff;
+    background-color: #377e7a;
+}
+
+.center {
+text-align: center;
+}
+
+.center h1 {
+margin-bottom: 10px;
+}
+
+    /* typography */
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1;
+    }
+    
+    h1 {
+    font-family: serif;
+    font-weight: bold;
+    
+    font-size: 3em;
+    letter-spacing: -2px;
+    margin-bottom: 30px;
+    text-align: center;
+    }
+    
+    h2 {
+    font-size: 1.8em;
+    letter-spacing: -1px;
+    margin-bottom: 15px;
+    text-align: center;
+    font-weight: normal;
+    }
+
+    h4 {
+      text-align: center;
+      font-weight: normal;
+      }
+    h5 {
+      font-size: 0.8em;
+      text-align: center;
+      font-weight: normal;
+      }
+    
+    p {
+    font-size: 1.1em;
+    line-height: 1.7em;
+    }
+
+    /* header */
+header {
+  position: relative;
+}
+
+a {
+  color: #ffffff;
+  
+}
+
+#logo {
+    float: left;
+    margin-right: 10px;
+    font-size: 1.7em;
+    color: #ffffff;
+    text-transform: uppercase;
+    letter-spacing: -1px;
+    padding-top: 9px;
+    font-weight: bold;
+    }
+    
+    #logo:hover {
+    color: #ffffff;
+    text-decoration: none;
+    }
+
+/* footer */
+
+footer {
+  text-align: center;
+  color: #ffffff;
+}
+
+footer a {
+  color: #ffffff;
+}
+
+footer small {
+  float: center;
+}
+
+footer ul {
+  float: right;
+  list-style: none;
+}
+
+footer ul li {
+  float: left;
+  margin-left: 15px;
+}
+
+@media (max-width: 800px) {
+  footer {
+    small {
+      display: block;
+      float: none;
+      margin-bottom: 1em;
+    }
+    ul {
+      float: none;
+      padding: 0;
+      li {
+        float: none;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+#error_explanation {
+    color:  rgb(228, 58, 58);
+    ul {
+      color: rgb(228, 58, 58);
+      margin: 0 0 30px 0;
+    }
+  }
+  
+  .field_with_errors {
+    @extend .has-error;
+    .form-control {
+      color: $state-danger-text;
+    }
+  }
+
+/* sidebar */
+
+aside {
+    section.user_info {
+      margin-top: 20px;
+    }
+    section {
+      padding: 10px 0;
+      margin-top: 20px;
+      &:first-child {
+        border: 0;
+        padding-top: 0;
+      }
+      span {
+        display: block;
+        margin-bottom: 3px;
+        line-height: 1;
+      }
+      h1 {
+        font-size: 1.4em;
+        text-align: left;
+        letter-spacing: -1px;
+        margin-bottom: 3px;
+        margin-top: 0px;
+      }
+    }
+  }
+
+  .container{
+    flex: 1;
+    padding: 1rem;
+  }
+
+  .container h2.title{
+    padding: 1rem;
+  }
+  
+  input[type=button] {
+    padding: 0.3rem;
+    font-size: 1rem;
+  }
+  
+  .gravatar {
+    float: left;
+    margin-right: 10px;
+  }
+  
+  .gravatar_edit {
+    margin-top: 15px;
+  }
+ /* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+@mixin box_sizing {
+  -moz-box-sizing:    border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing:         border-box;
+}
+
+/* mixins, variables, etc. */
+
+$gray-medium-light: #eaeaea;
+
+
+.box_home {
+  width: 100%;
+  float: center;
+}
+
+.left_box {
+  padding-top: 150px;
+  width: 20%;
+  float: left;
+}
+
+.mid_box {
+  border-radius: 15px;
+  width: 60%;
+  height: 550px;
+  float: left;
+  position: relative;
+}
+
+.zone_box {
+
+  background-color: #333;
+  width: 100%;
+  height: 100px;
+  float: left;
+  position: relative;
+}
+.zone_box:hover{
+  background-color: #444 !important;
+  color: white;
+}
+
+.zone_left {
+  width: 50%;
+  height: 100px;
+  float: left;
+}
+.zone_right {
+  width: 50%;
+  height: 100px;
+  float: right;
+  position: relative;
+}
+
+.right_box {
+  padding-top: 155px;
+  padding-left: 25px;
+  width: 20%;
+  float: right;
+  position: relative;
+}
+
+.button {
+  position: relative;
+  background-color: #444;
+  border: none;
+  font-size: 13px;
+  color: #FFFFFF;
+  padding: 5px;
+  text-align: center;
+  -webkit-transition-duration: 0.4s; /* Safari */
+  transition-duration: 0.4s;
+  text-decoration: none;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.button:after {
+  content: "";
+  background: #333;
+  display: block;
+  position: absolute;
+  padding-top: 300%;
+  padding-left: 350%;
+  margin-left: -20px!important;
+  margin-top: -120%;
+  opacity: 0;
+  transition: all 0.8s
+}
+
+.button:active:after {
+  padding: 0;
+  margin: 0;
+  opacity: 1;
+  transition: 0s
+}
+
