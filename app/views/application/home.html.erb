@@ -232,14 +232,11 @@
                     <%= "12-Hours Clock" %>
 
                     <script>
-                        console.log(<%= session[:status]%>);
                         
                         <% if session[:status] == "24" %>
                             $(".change").prop("checked", false);
-                            console.log("this is executed");
                         <% else %>
                             $(".change").prop("checked", true);
-                            console.log("should be 12 actually "+<%= session[:status]%>);
                         <% end %>
 
                         $(".change").click(function(){
@@ -248,7 +245,6 @@
                             <% else %>
                                 status = "24";
                             <% end %>
-                            console.log(<%= session[:status]%>);
 
                             $.ajax({
                                 type: "post",
@@ -257,7 +253,6 @@
                                     status: status
                                 },
                                 success: function(result){
-                                    console.log("current value after post is for session is "+  <%=  @session %>);
                                     window.location.reload();
                                 }
                             })
