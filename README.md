@@ -1,24 +1,11 @@
-# README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Name: Yi Yang
+Student number: 3798354
+DI
 
-Things you may want to cover:
+The time sheet: https://toggl.com/app/reports/summary/4332137
 
-* Ruby version
+Git hub repo: https://github.com/YiYang-Clotho/RAD2020_s3798354
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Heroku deployment URL: https://rad-assignment-final.herokuapp.com/
+the last deployment log:
